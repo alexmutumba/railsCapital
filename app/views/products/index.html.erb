@@ -1,0 +1,27 @@
+<table class="table table table-bordered table table-striped table-hover table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Product Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Make</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <div id="products">
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td><%= product.product_name %></td>
+      <td><%= product.description %></td>
+      <td><%= product.Quantity %></td>
+      <td><%= product.Make %></td>
+      <td><%= link_to 'show', product %></td>
+      <td><%= link_to 'edit', edit_product_path(product) %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+
+<%= link_to "New product", new_product_path, class:'btn btn-secondary' %>
